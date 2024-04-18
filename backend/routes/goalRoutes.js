@@ -1,9 +1,11 @@
 // import syntax
 const express = require('express')
 const router = express.Router()
+const connectDB = require('../config/db')
 const {getGoals, setGoal, updateGoal, deleteGoal} = require('../controllers/goalController')
 
-
+// Run the connection to mongoDB in backend/config/db.js
+connectDB()
 
 // 1 liner doing the below code snippet
 router.route('/').get(getGoals).post(setGoal)

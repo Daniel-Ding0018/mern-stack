@@ -1,4 +1,5 @@
 const express = require('express')
+const colors = require('colors')
 const dotenv = require('dotenv').config()
 const {errorHandler} = require('./middleware/errorMiddleware')
 
@@ -16,6 +17,6 @@ app.use(express.urlencoded({extended: false}))
 app.use('/api/goals', require('./routes/goalRoutes'))
 app.use(errorHandler)
 
-
+// connection to port 
 app.listen(port, () => console.log(`Server started on port ${port}`))
 
